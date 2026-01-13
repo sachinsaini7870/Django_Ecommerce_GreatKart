@@ -3,6 +3,7 @@ from store.models import Product
 
 # Create your models here.
 
+
 class Cart(models.Model):
     cart_id = models.CharField(max_length=250, blank=True)
     date_added = models.DateField(auto_now_add=True)
@@ -21,5 +22,4 @@ class CartItem(models.Model):
         return self.product.price * self.quantity
 
     def __str__(self):
-        return self.product
-
+        return str(self.product)
